@@ -1,0 +1,5 @@
+if(EXISTS "C:/Users/creat/QUANT1/Cpp-binomial-pricer/build/runTests[1]_tests.cmake")
+  include("C:/Users/creat/QUANT1/Cpp-binomial-pricer/build/runTests[1]_tests.cmake")
+else()
+  add_test(runTests_NOT_BUILT runTests_NOT_BUILT)
+endif()
