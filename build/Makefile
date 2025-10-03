@@ -248,6 +248,33 @@ gtest_main/fast:
 	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googletest\CMakeFiles\gtest_main.dir\build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
 
+src/binomial_pricer.obj: src/binomial_pricer.cpp.obj
+.PHONY : src/binomial_pricer.obj
+
+# target to build an object file
+src/binomial_pricer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pricer.dir\build.make CMakeFiles/pricer.dir/src/binomial_pricer.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/src/binomial_pricer.cpp.obj
+.PHONY : src/binomial_pricer.cpp.obj
+
+src/binomial_pricer.i: src/binomial_pricer.cpp.i
+.PHONY : src/binomial_pricer.i
+
+# target to preprocess a source file
+src/binomial_pricer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pricer.dir\build.make CMakeFiles/pricer.dir/src/binomial_pricer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/src/binomial_pricer.cpp.i
+.PHONY : src/binomial_pricer.cpp.i
+
+src/binomial_pricer.s: src/binomial_pricer.cpp.s
+.PHONY : src/binomial_pricer.s
+
+# target to generate assembly for a file
+src/binomial_pricer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pricer.dir\build.make CMakeFiles/pricer.dir/src/binomial_pricer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/src/binomial_pricer.cpp.s
+.PHONY : src/binomial_pricer.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -315,6 +342,9 @@ help:
 	@echo ... gtest_main
 	@echo ... pricer
 	@echo ... runTests
+	@echo ... src/binomial_pricer.obj
+	@echo ... src/binomial_pricer.i
+	@echo ... src/binomial_pricer.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

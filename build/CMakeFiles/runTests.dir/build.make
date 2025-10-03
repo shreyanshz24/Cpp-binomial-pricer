@@ -86,21 +86,38 @@ CMakeFiles/runTests.dir/tests/main_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/runTests.dir/tests/main_test.cpp.s"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\creat\QUANT1\Cpp-binomial-pricer\tests\main_test.cpp -o CMakeFiles\runTests.dir\tests\main_test.cpp.s
 
+CMakeFiles/runTests.dir/src/binomial_pricer.cpp.obj: CMakeFiles/runTests.dir/flags.make
+CMakeFiles/runTests.dir/src/binomial_pricer.cpp.obj: CMakeFiles/runTests.dir/includes_CXX.rsp
+CMakeFiles/runTests.dir/src/binomial_pricer.cpp.obj: C:/Users/creat/QUANT1/Cpp-binomial-pricer/src/binomial_pricer.cpp
+CMakeFiles/runTests.dir/src/binomial_pricer.cpp.obj: CMakeFiles/runTests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\creat\QUANT1\Cpp-binomial-pricer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/runTests.dir/src/binomial_pricer.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/runTests.dir/src/binomial_pricer.cpp.obj -MF CMakeFiles\runTests.dir\src\binomial_pricer.cpp.obj.d -o CMakeFiles\runTests.dir\src\binomial_pricer.cpp.obj -c C:\Users\creat\QUANT1\Cpp-binomial-pricer\src\binomial_pricer.cpp
+
+CMakeFiles/runTests.dir/src/binomial_pricer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/runTests.dir/src/binomial_pricer.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\creat\QUANT1\Cpp-binomial-pricer\src\binomial_pricer.cpp > CMakeFiles\runTests.dir\src\binomial_pricer.cpp.i
+
+CMakeFiles/runTests.dir/src/binomial_pricer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/runTests.dir/src/binomial_pricer.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\creat\QUANT1\Cpp-binomial-pricer\src\binomial_pricer.cpp -o CMakeFiles\runTests.dir\src\binomial_pricer.cpp.s
+
 # Object files for target runTests
 runTests_OBJECTS = \
-"CMakeFiles/runTests.dir/tests/main_test.cpp.obj"
+"CMakeFiles/runTests.dir/tests/main_test.cpp.obj" \
+"CMakeFiles/runTests.dir/src/binomial_pricer.cpp.obj"
 
 # External object files for target runTests
 runTests_EXTERNAL_OBJECTS =
 
 runTests.exe: CMakeFiles/runTests.dir/tests/main_test.cpp.obj
+runTests.exe: CMakeFiles/runTests.dir/src/binomial_pricer.cpp.obj
 runTests.exe: CMakeFiles/runTests.dir/build.make
 runTests.exe: lib/libgtest_main.a
 runTests.exe: lib/libgtest.a
 runTests.exe: CMakeFiles/runTests.dir/linkLibs.rsp
 runTests.exe: CMakeFiles/runTests.dir/objects1.rsp
 runTests.exe: CMakeFiles/runTests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\creat\QUANT1\Cpp-binomial-pricer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable runTests.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\creat\QUANT1\Cpp-binomial-pricer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable runTests.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\runTests.dir\link.txt --verbose=$(VERBOSE)
 	"C:\Program Files\CMake\bin\cmake.exe" -D TEST_TARGET=runTests -D TEST_EXECUTABLE=C:/Users/creat/QUANT1/Cpp-binomial-pricer/build/runTests.exe -D TEST_EXECUTOR= -D TEST_WORKING_DIR=C:/Users/creat/QUANT1/Cpp-binomial-pricer/build -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_FILTER= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=runTests_TESTS -D CTEST_FILE=C:/Users/creat/QUANT1/Cpp-binomial-pricer/build/runTests[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_DISCOVERY_EXTRA_ARGS= -D TEST_XML_OUTPUT_DIR= -P "C:/Program Files/CMake/share/cmake-4.1/Modules/GoogleTestAddTests.cmake"
 

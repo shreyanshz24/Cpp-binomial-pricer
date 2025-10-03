@@ -7,9 +7,21 @@
 },
 {
   "directory": "C:/Users/creat/QUANT1/Cpp-binomial-pricer/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\pricer.dir\\src\\binomial_pricer.cpp.obj -c C:\\Users\\creat\\QUANT1\\Cpp-binomial-pricer\\src\\binomial_pricer.cpp",
+  "file": "C:/Users/creat/QUANT1/Cpp-binomial-pricer/src/binomial_pricer.cpp",
+  "output": "CMakeFiles/pricer.dir/src/binomial_pricer.cpp.obj"
+},
+{
+  "directory": "C:/Users/creat/QUANT1/Cpp-binomial-pricer/build",
   "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/runTests.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\runTests.dir\\tests\\main_test.cpp.obj -c C:\\Users\\creat\\QUANT1\\Cpp-binomial-pricer\\tests\\main_test.cpp",
   "file": "C:/Users/creat/QUANT1/Cpp-binomial-pricer/tests/main_test.cpp",
   "output": "CMakeFiles/runTests.dir/tests/main_test.cpp.obj"
+},
+{
+  "directory": "C:/Users/creat/QUANT1/Cpp-binomial-pricer/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/runTests.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\runTests.dir\\src\\binomial_pricer.cpp.obj -c C:\\Users\\creat\\QUANT1\\Cpp-binomial-pricer\\src\\binomial_pricer.cpp",
+  "file": "C:/Users/creat/QUANT1/Cpp-binomial-pricer/src/binomial_pricer.cpp",
+  "output": "CMakeFiles/runTests.dir/src/binomial_pricer.cpp.obj"
 },
 {
   "directory": "C:/Users/creat/QUANT1/Cpp-binomial-pricer/build/_deps/googletest-build/googlemock",

@@ -156,12 +156,12 @@ _deps/googletest-build/googletest/clean: _deps/googletest-build/googletest/CMake
 CMakeFiles/pricer.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\pricer.dir\build.make CMakeFiles/pricer.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\pricer.dir\build.make CMakeFiles/pricer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\creat\QUANT1\Cpp-binomial-pricer\build\CMakeFiles --progress-num=9,10 "Built target pricer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\creat\QUANT1\Cpp-binomial-pricer\build\CMakeFiles --progress-num=9,10,11 "Built target pricer"
 .PHONY : CMakeFiles/pricer.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/pricer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\creat\QUANT1\Cpp-binomial-pricer\build\CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\creat\QUANT1\Cpp-binomial-pricer\build\CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/pricer.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\creat\QUANT1\Cpp-binomial-pricer\build\CMakeFiles 0
 .PHONY : CMakeFiles/pricer.dir/rule
@@ -173,7 +173,7 @@ pricer: CMakeFiles/pricer.dir/rule
 # codegen rule for target.
 CMakeFiles/pricer.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\pricer.dir\build.make CMakeFiles/pricer.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\creat\QUANT1\Cpp-binomial-pricer\build\CMakeFiles --progress-num=9,10 "Finished codegen for target pricer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\creat\QUANT1\Cpp-binomial-pricer\build\CMakeFiles --progress-num=9,10,11 "Finished codegen for target pricer"
 .PHONY : CMakeFiles/pricer.dir/codegen
 
 # clean rule for target.
@@ -185,16 +185,16 @@ CMakeFiles/pricer.dir/clean:
 # Target rules for target CMakeFiles/runTests.dir
 
 # All Build rule for target.
-CMakeFiles/runTests.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 CMakeFiles/runTests.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
+CMakeFiles/runTests.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\creat\QUANT1\Cpp-binomial-pricer\build\CMakeFiles --progress-num=11,12 "Built target runTests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\creat\QUANT1\Cpp-binomial-pricer\build\CMakeFiles --progress-num=12,13,14 "Built target runTests"
 .PHONY : CMakeFiles/runTests.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/runTests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\creat\QUANT1\Cpp-binomial-pricer\build\CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\creat\QUANT1\Cpp-binomial-pricer\build\CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/runTests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\creat\QUANT1\Cpp-binomial-pricer\build\CMakeFiles 0
 .PHONY : CMakeFiles/runTests.dir/rule
@@ -206,7 +206,7 @@ runTests: CMakeFiles/runTests.dir/rule
 # codegen rule for target.
 CMakeFiles/runTests.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\creat\QUANT1\Cpp-binomial-pricer\build\CMakeFiles --progress-num=11,12 "Finished codegen for target runTests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\creat\QUANT1\Cpp-binomial-pricer\build\CMakeFiles --progress-num=12,13,14 "Finished codegen for target runTests"
 .PHONY : CMakeFiles/runTests.dir/codegen
 
 # clean rule for target.

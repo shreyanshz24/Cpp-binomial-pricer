@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/runTests.dir/src/binomial_pricer.cpp.obj"
+  "CMakeFiles/runTests.dir/src/binomial_pricer.cpp.obj.d"
   "CMakeFiles/runTests.dir/tests/main_test.cpp.obj"
   "CMakeFiles/runTests.dir/tests/main_test.cpp.obj.d"
   "librunTests.dll.a"
