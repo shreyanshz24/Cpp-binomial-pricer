@@ -1,7 +1,0 @@
-add_test([=[PriceTest.EuropeanCallKnownValue]=]  C:/Users/creat/QUANT1/Cpp-binomial-pricer/build/runTests.exe [==[--gtest_filter=PriceTest.EuropeanCallKnownValue]==] --gtest_also_run_disabled_tests)
-set_tests_properties([=[PriceTest.EuropeanCallKnownValue]=]  PROPERTIES WORKING_DIRECTORY C:/Users/creat/QUANT1/Cpp-binomial-pricer/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
-add_test([=[PriceTest.EuropeanPutKnownValue]=]  C:/Users/creat/QUANT1/Cpp-binomial-pricer/build/runTests.exe [==[--gtest_filter=PriceTest.EuropeanPutKnownValue]==] --gtest_also_run_disabled_tests)
-set_tests_properties([=[PriceTest.EuropeanPutKnownValue]=]  PROPERTIES WORKING_DIRECTORY C:/Users/creat/QUANT1/Cpp-binomial-pricer/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
-add_test([=[PriceTest.InvalidParameters]=]  C:/Users/creat/QUANT1/Cpp-binomial-pricer/build/runTests.exe [==[--gtest_filter=PriceTest.InvalidParameters]==] --gtest_also_run_disabled_tests)
-set_tests_properties([=[PriceTest.InvalidParameters]=]  PROPERTIES WORKING_DIRECTORY C:/Users/creat/QUANT1/Cpp-binomial-pricer/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
-set(  runTests_TESTS PriceTest.EuropeanCallKnownValue PriceTest.EuropeanPutKnownValue PriceTest.InvalidParameters)

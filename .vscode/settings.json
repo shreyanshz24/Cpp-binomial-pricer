@@ -76,6 +76,10 @@
     "sstream": "cpp",
     "stop_token": "cpp",
     "thread": "cpp",
-    "cinttypes": "cpp"
-  }
+    "cinttypes": "cpp",
+    "list": "cpp",
+    "xhash": "cpp",
+    "xtree": "cpp"
+  },
+  "C_Cpp.errorSquiggles": "disabled"
 }
