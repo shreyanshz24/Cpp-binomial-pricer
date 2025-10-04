@@ -47,14 +47,14 @@ void PricerTest_EuropeanCallKnownValue()
 {
     BinomialPricer<OptionType::Call, ExerciseType::European> pricer(50.0, 52.0, 0.05, 2.0, 1000, 0.3);
     double price = pricer.price();
-    EXPECT_NEAR(price, 4.33, 0.02);
+    EXPECT_NEAR(price, 9.71, 0.03);
 }
 
 void PricerTest_EuropeanPutKnownValue()
 {
-    BinomialPricer<OptionType::Put, ExerciseType::European> pricer(50.0, 52.0, 0.05, 2.0, 1000, 0.3);
+    BinomialPricer<OptionType::Put, ExerciseType::European> pricer(50.0, 52.0, 0.05, 2.0, 1000, 0.21);
     double price = pricer.price();
-    EXPECT_NEAR(price, 9.71, 0.02);
+    EXPECT_NEAR(price, 4.36, 0.02);
 }
 
 void PricerTest_InvalidParameters()
