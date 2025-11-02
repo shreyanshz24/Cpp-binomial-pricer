@@ -1,4 +1,5 @@
 #include "binomial_pricer.h"
+#include "option_types.h"
 #include <iostream>
 #include <string>
 #include <cmath>
