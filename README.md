@@ -1,114 +1,169 @@
-High-Performance C++ Binomial Options Pricer
-A robust, high-performance binomial options pricing engine written in modern C++17. This project provides a flexible and tested implementation of the Cox-Ross-Rubinstein (CRR) binomial model for valuing various types of options.
+High-Performance C++ Options Pricer
 
-Features
-Option Types: Prices both European and American style options.
+A robust, high-performance C++17 library for pricing European and American options using both Binomial Tree and Monte Carlo methods.
+This project provides flexible, efficient, and well-tested implementations for valuing various option types.
 
-Payoffs: Supports both Call and Put options.
+🚀 Features
 
-Greeks Calculation: Computes key risk metrics including Delta and Gamma.
+Two Pricing Models:
+Implements both the Cox-Ross-Rubinstein (CRR) Binomial Model and a Geometric Brownian Motion Monte Carlo simulation.
 
-Modern C++: Built with modern C++17 features, focusing on clean design, efficiency, and robustness.
+Option Types:
+Prices European and American style options (Binomial) and European options (Monte Carlo).
 
-Templated Design: Core pricing logic is templated to allow for different numeric precision types (float, double).
+Payoffs:
+Supports both Call and Put options.
 
-Fully Tested: Comprehensive unit test suite built with the Google Test framework to ensure mathematical correctness and handle edge cases.
+Greeks Calculation:
+Computes key risk metrics including Delta.
 
-Professional Build System: Uses CMake for cross-platform compilation and test integration.
+Modern C++17:
+Uses modern features (if constexpr, templates) for clean design and robustness.
 
-Core Theory: The Binomial Model
-The project implements the Cox-Ross-Rubinstein (CRR) model, which discretizes time to model the evolution of a stock price. In each time step Δt, the stock price S can either move up by a factor of u or down by a factor of d.
+Templated Architecture:
+Core pricing classes are templated on OptionType and ExerciseType for compile-time polymorphism.
 
-The key is to calculate a "risk-neutral probability" p for the upward movement. This is the probability that would exist in a world where all assets are expected to grow at the risk-free rate r. The formulas are:
+Fully Tested:
+Includes a custom unit test suite to ensure mathematical correctness and handle edge cases.
 
-Up-factor: $ u = e^{\sigma\sqrt{\Delta t}} $
+Cross-Platform Build System:
+Built using CMake, with CTest integration for testing.
 
-Down-factor: $ d = e^{-\sigma\sqrt{\Delta t}} = 1/u $
+📘 Core Theory
+1. Binomial Model (Cox-Ross-Rubinstein)
 
-Risk-Neutral Probability: $ p = \frac{e^{r\Delta t} - d}{u - d} $
+The Binomial Model discretizes time to model the evolution of a stock price.
+In each time step In each time step Δ𝑡, the stock price S can either move up by a factor 𝑢 or down by a factor 𝑑
 
-The option's value is then found by calculating its expected payoff at expiration and discounting it back to the present time, step by step, through the binomial tree. For American options, the possibility of early exercise is checked at each node.
+Formulas:
 
-Build and Usage
-1. Build from Source
-This project uses CMake. A C++17 compliant compiler is required.
+Up factor: u = exp(σ * sqrt(Δt))
 
-# Clone the repository
-git clone [https://github.com/shreyanshz24/Cpp-binomial-pricer.git](https://github.com/shreyanshz24/Cpp-binomial-pricer.git)
+Down factor: d = exp(-σ * sqrt(Δt))
+
+Risk-neutral probability: p = (exp(r * Δt) - d) / (u - d)
+
+The option’s value is calculated by discounting the expected payoff step-by-step through the tree.
+For American options, early exercise is checked at every node.
+
+2. Monte Carlo Model
+
+The Monte Carlo model simulates thousands of random paths for the asset price using Geometric Brownian Motion (GBM): S_T = S_0 * exp((r - 0.5 * σ^2) * T + σ * sqrt(T) * Z)
+where
+Z ~ N(0, 1) → (a random number from the standard normal distribution)
+
+Steps:
+
+Compute the payoff for each simulated path (e.g. 
+maxpayoff = max(S_T - K, 0)
+
+Take the average of all simulated payoffs.
+Discount the average payoff to present value using price = exp(-r * T) * average(payoff)
+
+⚙️ Build and Usage
+1. Clone the Repository
+git clone https://github.com/shreyanshz24/Cpp-binomial-pricer.git
 cd Cpp-binomial-pricer
 
-# Configure the project with CMake
-mkdir build
-cd build
-cmake ..
+2. Configure the Project with CMake
+cmake -B build -S .
 
-# Compile the code
-make
+3. Compile the Code
+cmake --build build
 
-This will create two executables in the build directory: pricer and runTests.
 
-2. Run the Pricer
-The pricer executable can be run from the command line with arguments.
+This will generate two executables inside the build/ directory:
 
-# Example command-line usage from the build directory:
-./pricer --option call --type american --S 100 --K 100 --r 0.05 --T 1.0 --N 500 --sigma 0.2
+pricer — the demo executable
+
+runTests — the unit test suite
+
+4. Run the Pricer Demo
+
+From the project root:
+
+.\build\pricer.exe
+
 
 Example Output:
 
-Option Type:      Call
-Exercise:         American
-Underlying (S):   100.00
-Strike (K):       100.00
-Maturity (T):     1.0 years
-Risk-Free Rate (r): 5.00%
-Steps (N):        500
-Volatility (σ):   20.00%
---------------------
-Computed Option Price: 10.43
-Delta:                 0.62
-Gamma:                 0.037
+--- Binomial ---
+European Call Price: 9.71038
+European Put Price:  6.76193
+American Put Price:  7.47345
+Delta of the Call:   0.63881
 
-3. Run Unit Tests
-The project uses Google Test, which is downloaded automatically.
+--- Monte Carlo ---
+European Call Price: 9.63660
+Delta of the Call:   -0.85484
 
-# From the build directory, run the test suite:
-ctest
+5. Run Unit Tests
 
-If all tests pass, the GitHub Actions build badge at the top of this README will show ✅ passing.
+From the build/ directory:
 
-Project Structure
+ctest --output-on-failure
+
+
+This runs the runTests executable and shows detailed results.
+All tests passing will mark your CI badge ✅ passing on GitHub Actions.
+
+📂 Project Structure
 Cpp-binomial-pricer/
-├── .github/workflows/    # CI/CD pipeline (GitHub Actions)
-│   └── cmake.yml
-├── include/              # Header-only implementation of the templated class
-│   └── binomial_pricer.h
-├── src/                  # Core source files
-│   └── main.cpp
-├── tests/                # GoogleTest unit tests
-│   └── main_test.cpp
-├── .gitignore            # Specifies files for Git to ignore
-├── CMakeLists.txt        # Build configuration
-└── README.md             # This file
+├── .github/workflows/
+│   └── cmake.yml              # CI/CD pipeline (GitHub Actions)
+├── include/
+│   ├── binomial_pricer.h      # Header-only Binomial Pricer
+│   ├── monte_carlo_pricer.h   # Header-only Monte Carlo Pricer
+│   └── option_types.h         # Shared enum definitions
+├── src/
+│   └── main.cpp               # Demo executable
+├── tests/
+│   └── main_test.cpp          # Custom unit tests
+├── .gitignore
+├── CMakeLists.txt             # Build configuration
+└── README.md                  # Project documentation
 
-Example Integration in C++
-To use the pricer library in your own C++ projects:
+💻 Example Integration in Your Project
+
+Include the headers and use the templated pricer classes:
 
 #include "include/binomial_pricer.h"
+#include "include/monte_carlo_pricer.h"
+#include "include/option_types.h"
 #include <iostream>
+#include <iomanip>
 
 int main() {
-    // Example: Create a pricer for an American Call
-    BinomialPricer pricer(100.0, 100.0, 0.05, 1.0, 500, 0.2);
+    std::cout << std::fixed << std::setprecision(5);
 
-    std::cout << "American Call Price: " << pricer.priceAmericanCall() << std::endl;
-    std::cout << "Delta: " << pricer.getDelta() << std::endl;
-    std::cout << "Gamma: " << pricer.getGamma() << std::endl;
+    // Example 1: Binomial Pricer for an American Put
+    BinomialPricer<OptionType::Put, ExerciseType::American> amerPut(50.0, 52.0, 0.05, 2.0, 1000, 0.3);
+    std::cout << "Binomial American Put Price: " << amerPut.price() << std::endl;
+    std::cout << "Delta: " << amerPut.getDelta() << std::endl;
+
+    // Example 2: Monte Carlo Pricer for a European Call
+    MonteCarloPricer<OptionType::Call, ExerciseType::European> mcEuroCall(50.0, 52.0, 0.05, 2.0, 0.3, 200000);
+    std::cout << "Monte Carlo European Call Price: " << mcEuroCall.price() << std::endl;
+    std::cout << "Delta: " << mcEuroCall.getDelta() << std::endl;
 
     return 0;
 }
 
-Contributing
-Pull requests, issues, and feature suggestions are welcome! Fork the repo, make your changes, and submit a pull request.
+🤝 Contributing
 
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
+Contributions are welcome!
+
+Fork the repo
+
+Create a new branch
+
+Commit your changes
+
+Submit a Pull Request
+
+Feature suggestions and issue reports are also appreciated.
+
+📜 License
+
+This project is licensed under the MIT License.
+See the LICENSE file for details.
