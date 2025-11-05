@@ -84,7 +84,6 @@ From the project root:
 
 .\build\pricer.exe
 
-
 Example Output:
 
 --- Binomial ---
